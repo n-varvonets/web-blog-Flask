@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+Editing an article
+{% endblock %}
+
+ {% block body %}
+<div class="container mt-5"><h1>Editing an article</h1>
+    <!-- далее создам форму, в которую и буду добавлять саму статью, не упустив метод "записи" в бд и можно указать стра
+    ницу на которой это будет обрабатываться/переход на страницу после выполнения команды(по дефолту стоит на данным html, но можно указать конкетную) action = '/create'-->
+<form method="post">
+ <!--  и остаеться лишь прописать поля для ввода всех необходимых нужных данных-->
+ <input type="text" name = "title" id = "title" class="form-control" placeholder="Input the title of article" value="{{ article.title }}"><br>
+ <textarea name="intro" id="intro" class="form-control" placeholder="Input into of article">{{ article.intro}}</textarea><br>
+ <textarea name="text" id="text" class="form-control" placeholder="Input main text of article">{{ article.text }}</textarea><br>
+ <!-- ну и кнопку, при нажатии которой все введенные данные будут отправляться на сервер-->
+ <input type="submit" class="btn btn-success" value="Submit">
+</div>
+</form>
+{% endblock %}

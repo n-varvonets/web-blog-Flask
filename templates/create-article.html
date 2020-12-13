@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+ Adding an article
+{% endblock %}
+
+ {% block body %}
+<div class="container mt-5"><h2>Add your article:</h2><br>
+    <!-- далее создам форму, в которую и буду добавлять саму статью, не упустив метод "записи" в бд и можно указать стра
+    ницу на которой это будет обрабатываться(по дефолту стоит на данным html, но можно указать конкетную) action = '/create'-->
+<form method="post">
+ <!--  и остаеться лишь прописать поля для ввода всех необходимых нужных данных-->
+ <input type="text" name = "title" id = "title" class="form-control" placeholder="Input the title of article"><!--класс добавил просто для красоты формы с бутсрапа,
+ айди пусть будет(потом можно будет обратиться по нему в случае чего), и само название  необходимых данных в формате.. --><br>
+ <textarea name="intro" id="intro" class="form-control" placeholder="Input intro of article"></textarea><br>
+ <textarea name="text" id="text" class="form-control" placeholder="Input main text of article"></textarea><br>
+ <!-- ну и кнопку, при нажатии которой все введенные данные будут отправляться на сервер-->
+ <input type="submit" class="btn btn-success" value="Submit">
+</div>
+</form>
+{% endblock %}

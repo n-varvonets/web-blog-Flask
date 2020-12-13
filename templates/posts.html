@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+All articles on the site
+{% endblock %}
+
+ {% block body %}
+<div class="container mt-12">
+    <h1>All articles:</h1>
+    {% for el in articles %}
+    <div class="alert alert-info">
+        <h2>{{ el.title }}</h2>
+        <p>{{ el.intro }}</p>
+        <p><b>{{ el.date.date() }}</b></p><!--method date() for correct date from utc-->
+        <!--need to ду динамический адрес, перейдя по ссылке мы получим доступ к нашей статье + и отобразить этот адрес в арр.ру-->
+        <a href="/posts/{{ el.id }}" class="btn btn-warning">More details</a>
+    </div>
+    {% endfor%}
+</div>
+{% endblock %}
